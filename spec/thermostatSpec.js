@@ -10,7 +10,7 @@ describe ('thermostat', function() {
   });
 
   it('starts at 20 degrees when created', function() {
-    expect(thermo.temperature).toEqual(20);
+    expect(thermo.getCurrentTemperature()).toEqual(20);
 
   });
 });
