@@ -4,7 +4,7 @@
 describe ('thermostat', function() {
 
   var thermo;
-  
+
   beforeEach(function() {
     thermo = new Thermostat()
   });
@@ -30,5 +30,25 @@ describe ('thermostat', function() {
     }
     expect(thermo.getCurrentTemperature()).toEqual(10);
   });
+
+  it('has a power saving mode which default to On when spawned', function() {
+    expect(thermo.getPowerSavingMode()).toEqual("On");
+  });
+
+  it('can turn power saving mode off.', function() {
+    expect(thermo.offPowerSavingMode()).toEqual("Off");
+  });
+
+  it('can turn power saving mode on.', function() {
+    thermo.offPowerSavingMode();
+    expect(thermo.onPowerSavingMode()).toEqual("On");
+  })
+  it('has a maximum temperature of 25 degrees with powersaving on', function() {
+    for (var i = 0; i < 6; i++) {
+      thermo.increaseTemperature();
+    }
+    expect(thermo.getCurrentTemperature()).toEqual(25);
+  });
+
 
 });
