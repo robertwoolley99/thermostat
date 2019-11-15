@@ -43,12 +43,14 @@ describe ('thermostat', function() {
     thermo.offPowerSavingMode();
     expect(thermo.onPowerSavingMode()).toEqual("On");
   })
+
   it('has a maximum temperature of 25 degrees with powersaving on', function() {
     for (var i = 0; i < 6; i++) {
       thermo.increaseTemperature();
     }
     expect(thermo.getCurrentTemperature()).toEqual(25);
   });
+
   it('has a maximum temperature of 32 degrees with powersaving off', function() {
     thermo.offPowerSavingMode();
     for (var i = 0; i < 13; i++) {
@@ -60,15 +62,18 @@ describe ('thermostat', function() {
     thermo.increaseTemperature();
     expect(thermo.reset()).toEqual(20);
   });
+
   it('has a usage function which reports temps of 18-24 degrees as medium-usage', function () {
     expect(thermo.getUsage()).toEqual('medium-usage');
   });
+
   it('has a usage function which reports temps of 25+ degrees as high-usage', function () {
     for (var i = 0; i < 6; i++) {
       thermo.increaseTemperature();
     }
     expect(thermo.getUsage()).toEqual('high-usage');
   });
+  
   it('has a usage function which reports temps of 17  degrees and below as low-usage', function () {
     for (var i = 0; i < 6; i++) {
       thermo.decreaseTemperature();
