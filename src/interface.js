@@ -2,6 +2,9 @@
 
 $(document).ready(function(){
   var thermostat = new Thermostat();
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=496f91ea770ed15dd1eb081af5f2b279&units=metric', function(data) {
+    $('#current-temperature').text(data.main.temp)
+  })
     updateTemperature();
   $('#temperature-up').on('click', function(){
     thermostat.increaseTemperature();
@@ -28,5 +31,6 @@ $(document).ready(function(){
 
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature)
+    $('#temperature').attr('class', thermostat.getUsage());
   }
 })
