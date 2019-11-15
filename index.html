@@ -7,17 +7,24 @@
   </head>
   <body>
     <section>
-      <h1>Current temperature: <span id="current-temperature"></span>
-      </h1>
-      <h1 id="temperature"></h1>
+      <h1>Current external temperature: <span id="current-temperature"></span>
+      <br><br>  <span id="temperature"></span><br>
+
+      <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input type="submit"></input>
+        </form>
+
+      <h2>
       <p>
       <button id="temperature-up">+</button>
       <button id="temperature-down">-</button>
       <button id="temperature-reset">reset</button>
-      power saving mode is <span id="power-saving-status">on</span>
-      <button id="powersaving-on">PSM on</button>
-      <button id="powersaving-off">PSM off</button>  </p>
+      <br>power saving mode is <span id="power-saving-status">on</span>
+      <br><br><button id="powersaving-on">PSM on</button>
+      <button id="powersaving-off">PSM off</button>  </p></h2>
     </section>
+    <a href="https://imgflip.com/i/3ggvgr"><img src="https://i.imgflip.com/3ggvgr.jpg" class="center"/></a>
     <script
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

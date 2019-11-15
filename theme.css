@@ -9,3 +9,18 @@
 .high-usage {
   color: red
 }
+
+body {background-color: indianred;}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+#temperature {
+  color: white;
+}
